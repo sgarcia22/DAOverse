@@ -11,11 +11,11 @@ After extensive research, we discovered that there are not presently any impactf
 
 
 ## What technologies did we use for our dApp?
--Coinbase Wallet
--WalletConnect
--Web3Auth
--ethers
--Web3React
+- Coinbase Wallet
+- WalletConnect
+- Web3Auth
+- ethers
+- Web3React
 
 
 
