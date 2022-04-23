@@ -27,7 +27,10 @@ import WalletModal from "./WalletModal";
 import { networkParams } from "./networks";
 import { toHex, truncateAddress } from "./utils";
 import { connectors } from "./connectors";
-import { CheckCircleIcon, WarningIcon } from "@chakra-ui/icons";
+import { CheckCircleIcon, WarningIcon, InfoIcon } from "@chakra-ui/icons";
+import WalletConnect from "@walletconnect/client";
+import QRCodeModal from "@walletconnect/qrcode-modal";
+import Web3AuthComponent from "./Web3AuthComponent";
 
 export function HomePage() {
   const auth = useContext(AuthContext);
@@ -235,23 +238,34 @@ export function HomePage() {
         )}
         <Container className={styles.roomsContainer}>
           <h3 className={styles.roomsHeading}>
-            <FormattedMessage id="home-page.connect--wallet" defaultMessage="Step 1: Connect your Wallet" />
-          </h3>
-          <Flex justify="center">
-            {!active ? (
-              <Button onClick={onOpen}>Connect Wallet</Button>
-            ) : (
-              <Button onClick={disconnect}>Disconnect</Button>
-            )}
-          </Flex>
-          <VStack justifyContent="center">
-            <Text>{`Connection Status: `}</Text>
-            {active ? <CheckCircleIcon color="green" /> : <WarningIcon color="#cd5700" />}
-
-            <Tooltip label={account} placement="right">
-              <Text>{`Account: ${truncateAddress(account)}`}</Text>
+            <FormattedMessage
+              id="home-page.connect--wallet"
+              defaultMessage="Step 1: Connect your Wallet or Login    "
+            />
+            <span />
+            <Tooltip
+              label="By connecting your wallet, it will enable you to receive rewards by interacting with our communities through the DAOVerse in the form of NFT badges, social tokens, and POAPs."
+              fontSize="md"
+            >
+              <InfoIcon />
             </Tooltip>
-          </VStack>
+          </h3>
+          <HStack justify="center" spacing="40px">
+            <VStack justifyContent="center">
+              <h2>New to web3? Log in with the social networks you are already familiar with.</h2>
+              <Web3AuthComponent />
+            </VStack>
+            <VStack justifyContent="center">
+              <h2>Already have a wallet? Connect with Coinbase Wallet, WalletConnect or Metamask.</h2>
+              {!active ? <Button onClick={onOpen}>Connect</Button> : <Button onClick={disconnect}>Disconnect</Button>}
+              <Text>{`Connection Status: `}</Text>
+              {active ? <CheckCircleIcon color="green" /> : <WarningIcon color="#cd5700" />}
+
+              <Tooltip label={account} placement="right">
+                <Text>{`Account: ${truncateAddress(account)}`}</Text>
+              </Tooltip>
+            </VStack>
+          </HStack>
         </Container>
         {sortedPublicRooms.length > 0 && (
           <Container className={styles.roomsContainer}>

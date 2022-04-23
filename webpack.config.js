@@ -680,6 +680,12 @@ module.exports = async (env, argv) => {
           BASE_ASSETS_PATH: process.env.BASE_ASSETS_PATH,
           APP_CONFIG: appConfig
         })
+      }),
+      new webpack.ProvidePlugin({
+        Buffer: ["buffer", "Buffer"]
+      }),
+      new webpack.ProvidePlugin({
+        process: "process/browser"
       })
     ]
   };

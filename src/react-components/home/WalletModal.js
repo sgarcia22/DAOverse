@@ -14,6 +14,9 @@ import {
 import { Image } from "@chakra-ui/react";
 import { useWeb3React } from "@web3-react/core";
 import { connectors } from "./connectors";
+import coinbaseLogo from "../../assets/cbw.png";
+import walletConnectLogo from "../../assets/wc.png";
+import metamaskLogo from "../../assets/mm.png";
 
 export default function WalletModal({ isOpen, closeModal }) {
   const { activate } = useWeb3React();
@@ -44,7 +47,7 @@ export default function WalletModal({ isOpen, closeModal }) {
               w="100%"
             >
               <HStack w="100%" justifyContent="center">
-                <Image src="/cbw.png" alt="Coinbase Wallet Logo" width={25} height={25} borderRadius="3px" />
+                <Image src={coinbaseLogo} alt="Coinbase Wallet Logo" width={25} height={25} borderRadius="3px" />
                 <Text>Coinbase Wallet</Text>
               </HStack>
             </Button>
@@ -58,7 +61,7 @@ export default function WalletModal({ isOpen, closeModal }) {
               w="100%"
             >
               <HStack w="100%" justifyContent="center">
-                <Image src="/wc.png" alt="Wallet Connect Logo" width={26} height={26} borderRadius="3px" />
+                <Image src={walletConnectLogo} alt="Wallet Connect Logo" width={26} height={26} borderRadius="3px" />
                 <Text>Wallet Connect</Text>
               </HStack>
             </Button>
@@ -72,7 +75,7 @@ export default function WalletModal({ isOpen, closeModal }) {
               w="100%"
             >
               <HStack w="100%" justifyContent="center">
-                <Image src="/mm.png" alt="Metamask Logo" width={25} height={25} borderRadius="3px" />
+                <Image src={metamaskLogo} alt="Metamask Logo" width={25} height={25} borderRadius="3px" />
                 <Text>Metamask</Text>
               </HStack>
             </Button>
