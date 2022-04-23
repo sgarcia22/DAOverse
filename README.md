@@ -18,7 +18,7 @@ After extensive research, we discovered that there are not presently any impactf
 - Web3React
 - Tatum, Polygon, IPFS
 
-# Tatum, Polygon, IPFS Code Usage
+## Tatum, Polygon, IPFS Code Usage
 
 Ran on Postman Workspace (postman.co) <br />
 Used Tatum to create wallet on Polygon, make address, generate private key, upload NFT image to IPFS, and mint an NFT to a user address <br />
