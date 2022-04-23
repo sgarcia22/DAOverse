@@ -16,6 +16,25 @@ After extensive research, we discovered that there are not presently any impactf
 - Web3Auth
 - ethers
 - Web3React
+- Tatum, Polygon, IPFS
 
+# Tatum, Polygon, IPFS Code Usage
 
+Ran on Postman Workspace (postman.co)
+Used Tatum to create wallet on Polygon, make address, generate private key, upload NFT image to IPFS, and mint an NFT to a user address
 
+HTTP Request to Mint NFT:
+POST https://api-eu1.tatum.io/v3/nft/mint
+{
+   "chain": "MATIC",
+   "tokenId": "3",
+   "to": "0x06bd56506d1983af065b1837EFf23DA1a3e30472",
+   "contractAddress": "0xe1f825651f527006e77cfe8f519bc93415c9e888",
+   "url": "ipfs://bafkreifgrczpk3has4alltnjvr4vmkhxc7ax3n77xjxhjft7pgry567sze",
+   "fromPrivateKey": PRIVATE_KEY
+}
+
+Minted NFT URL on Opensea:
+https://testnets.opensea.io/assets/mumbai/0xe1f825651f527006e77cfe8f519bc93415c9e888/3
+Testnet Polyscan Transaction:
+https://mumbai.polygonscan.com/tx/0x19ba8807789465f87e60091d783a2afdbbf3df41e95791ce920fe2aa4e977107
