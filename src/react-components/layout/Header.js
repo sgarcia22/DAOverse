@@ -106,7 +106,7 @@ export function Header({
               </a>
             </div>
           ) : (
-            <SignInButton />
+            <div />
           )}
         </div>
         {isHmc ? <SocialBar mobile /> : null}
